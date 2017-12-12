@@ -3,3 +3,4 @@ function greeter(person) {
 }
 var user = { firstName: "Jane", lastName: "User" };
 console.log(greeter(user));
+//# sourceMappingURL=03_interface.js.map
