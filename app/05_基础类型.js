@@ -46,14 +46,9 @@ var Color2;
 })(Color2 || (Color2 = {})); //全部都采用手动赋值
 var c2 = Color2.Green;
 console.log(c2); //out => 3
-var Color3;
-(function (Color3) {
-    Color3[Color3["Red"] = "myRed"] = "Red";
-    Color3[Color3["Green"] = "myGreen"] = "Green";
-    Color3[Color3["Blue"] = "myBlue"] = "Blue";
-})(Color3 || (Color3 = {})); //js中不会报错,但是不推荐
-var c3 = Color3.Green;
-console.log(c3);
+/*enum Color3 {Red = "myRed", Green = "myGreen", Blue = "myBlue"}     //js中不会报错,但是不推荐
+ let c3: Color3 = Color3.Green;
+ console.log(c3);*/
 var colorName = Color1[2]; //枚举类型提供的一个便利是你可以由枚举的值得到它的名字
 console.log(colorName); //=>Green
 /*任意值 any  -- 有时候，我们会想要为那些在编程阶段还不清楚类型的变量指定一个类型。
@@ -67,4 +62,13 @@ notSure = false;
 var listAny = [1, true, "free"];
 listAny[3] = 100;
 console.log(listAny);
+// 空值-某种程度上来说，void类型像是与any类型相反，它表示没有任何类型。 当一个函数没有返回值时，你通常会见到其返回值类型是 void
+function warnUser() {
+    console.log("this is my warning message");
+}
+var unusable = undefined; //声明一个void类型的变量没有什么大用，因为你只能为它赋予undefined和null
+var unusable1 = null;
+// Null 和 Undefined -- TypeScript里，undefined和null两者各自有自己的类型分别叫做undefined和null。 和 void相似，它们的本身的类型用处不是很大
+// let u: undefined = undefined;
+// let n: null = null;
 //# sourceMappingURL=05_基础类型.js.map

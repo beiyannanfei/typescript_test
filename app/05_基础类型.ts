@@ -41,9 +41,9 @@ enum Color2 {Red = 1, Green = 3, Blue = 5}  //全部都采用手动赋值
 let c2: Color2 = Color2.Green;
 console.log(c2);    //out => 3
 
-enum Color3 {Red = "myRed", Green = "myGreen", Blue = "myBlue"}     //js中不会报错,但是不推荐
-let c3: Color3 = Color3.Green;
-console.log(c3);
+/*enum Color3 {Red = "myRed", Green = "myGreen", Blue = "myBlue"}     //js中不会报错,但是不推荐
+ let c3: Color3 = Color3.Green;
+ console.log(c3);*/
 
 let colorName: string = Color1[2];  //枚举类型提供的一个便利是你可以由枚举的值得到它的名字
 console.log(colorName); //=>Green
@@ -61,4 +61,16 @@ notSure = false;
 let listAny: any[] = [1, true, "free"];
 listAny[3] = 100;
 console.log(listAny);
+
+// 空值-某种程度上来说，void类型像是与any类型相反，它表示没有任何类型。 当一个函数没有返回值时，你通常会见到其返回值类型是 void
+function warnUser(): void {
+    console.log("this is my warning message");
+}
+
+let unusable: void = undefined;    //声明一个void类型的变量没有什么大用，因为你只能为它赋予undefined和null
+let unusable1: void = null;
+
+// Null 和 Undefined -- TypeScript里，undefined和null两者各自有自己的类型分别叫做undefined和null。 和 void相似，它们的本身的类型用处不是很大
+// let u: undefined = undefined;
+// let n: null = null;
 
