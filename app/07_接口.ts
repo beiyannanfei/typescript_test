@@ -67,3 +67,11 @@ let a07_: number[] = ro as number[];    //可以用类型断言重写
 //绕开这些检查非常简单。 最简便的方法是使用类型断言
 let mySquare1 = createSquare({colour: "red", width: 100} as SquareConfig);
 console.log("mySquare1: %j", mySquare1);
+
+//如果一个接口 带有任意数量的其它属性，那么我们可以这样定义它
+interface SquareConfig1 {//在这我们要表示的是SquareConfig可以有任意数量的属性，并且只要它们不是color和width，那么就无所谓它们的类型是什么
+    color?: string;
+    width?: number;
+
+    [propName: string]: any;    //其它字段
+}
