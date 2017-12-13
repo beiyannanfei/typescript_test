@@ -12,4 +12,16 @@ function printLabel1(labelledObj) {
 }
 var myObj1 = { size: 10, label: "size 10 object" };
 printLabel1(myObj1);
+function createSquare(config) {
+    var newSquare = { color: "white", area: 100 };
+    if (config.color) {
+        newSquare.color = config.color;
+    }
+    if (config.width) {
+        newSquare.area = config.width * config.width;
+    }
+    return newSquare;
+}
+var mySquare = createSquare({ color: "black" });
+console.log("mySquare: %j", mySquare); //out => mySquare: {"color":"black","area":100}
 //# sourceMappingURL=07_接口.js.map
