@@ -59,4 +59,11 @@ let ro: ReadonlyArray<number> = a07;
 // 上面代码的最后一行，可以看到就算把整个ReadonlyArray赋值到一个普通数组也是不可以的。
 let a07_: number[] = ro as number[];    //可以用类型断言重写
 
+//额外的属性检查
+//Error:(63, 31) TS2345: Argument of type '{ colour: string; width: number; }' is not assignable to parameter of type 'SquareConfig'.
+// Object literal may only specify known properties, but 'colour' does not exist in type 'SquareConfig'. Did you mean to write 'color'?
+// let mySquare1 = createSquare({colour: "red", width: 100});
 
+//绕开这些检查非常简单。 最简便的方法是使用类型断言
+let mySquare1 = createSquare({colour: "red", width: 100} as SquareConfig);
+console.log("mySquare1: %j", mySquare1);
