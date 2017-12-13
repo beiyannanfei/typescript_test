@@ -38,4 +38,10 @@ function f2(_a) {
 }
 var input = [1, 2];
 f2(input);
+function keepWholeObject(wholeObject) {
+    var a = wholeObject.a, _a = wholeObject.b, b = _a === void 0 ? 1001 : _a;
+    console.log("--------", a, b);
+}
+keepWholeObject({ a: 10 });
+keepWholeObject({ a: 10, b: 20 });
 //# sourceMappingURL=06_变量声明.js.map

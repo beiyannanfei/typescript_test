@@ -41,4 +41,9 @@ function f2([first, second]: Array<number>) {
 let input = [1, 2];
 f2(input);
 
-
+function keepWholeObject(wholeObject: {a: string, b?: number}) {
+    let {a, b = 1001} = wholeObject;
+    console.log("--------", a, b);
+}
+keepWholeObject({a: 10});
+keepWholeObject({a: 10, b: 20});
