@@ -23,9 +23,19 @@ function f1() {
 }
 console.log(f1()); // returns 2
 var _loop_1 = function(i) {
-    setTimeout(function () { console.log(i); }, 100 * i);
+    setTimeout(function () {
+        console.log(i);
+    }, 100 * i);
 };
 for (var i = 0; i < 10; i++) {
     _loop_1(i);
 }
+//解构数组
+function f2(_a) {
+    var first = _a[0], second = _a[1];
+    console.log("==========", first);
+    console.log("==========", second);
+}
+var input = [1, 2];
+f2(input);
 //# sourceMappingURL=06_变量声明.js.map

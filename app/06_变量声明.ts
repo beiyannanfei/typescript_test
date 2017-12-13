@@ -28,5 +28,17 @@ function f1() {
 console.log(f1()); // returns 2
 
 for (let i = 0; i < 10; i++) {
-    setTimeout(function() { console.log(i); }, 100 * i);
+    setTimeout(function () {
+        console.log(i);
+    }, 100 * i);
 }
+
+//解构数组
+function f2([first, second]: Array<number>) {
+    console.log("==========", first);
+    console.log("==========", second);
+}
+let input = [1, 2];
+f2(input);
+
+
