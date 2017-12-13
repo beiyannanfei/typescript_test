@@ -22,4 +22,10 @@ function f1() {
     }
 }
 console.log(f1()); // returns 2
+var _loop_1 = function(i) {
+    setTimeout(function () { console.log(i); }, 100 * i);
+};
+for (var i = 0; i < 10; i++) {
+    _loop_1(i);
+}
 //# sourceMappingURL=06_变量声明.js.map

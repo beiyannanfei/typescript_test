@@ -27,4 +27,6 @@ function f1() {
 
 console.log(f1()); // returns 2
 
-
+for (let i = 0; i < 10; i++) {
+    setTimeout(function() { console.log(i); }, 100 * i);
+}
