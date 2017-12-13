@@ -28,3 +28,22 @@ t1[2] = "world";    //当访问一个越界的元素，会使用联合类型替�
 t1[3] = 100;        //同上
 // t1[4] = true;       //error 布尔不是(string | number)类型
 
+//枚举 enum类型是对JavaScript标准数据类型的一个补充。 像C#等其它语言一样，使用枚举类型可以为一组数值赋予友好的名字。
+enum Color {Red, Green, Blue}
+let c: Color = Color.Green;
+console.log(c); //out => 1
+
+enum Color1 {Red = 1, Green, Blue}  //默认情况下，从0开始为元素编号。 你也可以手动的指定成员的数值
+let c1: Color1 = Color1.Green;
+console.log(c1);    //out => 2
+
+enum Color2 {Red = 1, Green = 3, Blue = 5}  //全部都采用手动赋值
+let c2: Color2 = Color2.Green;
+console.log(c2);    //out => 3
+
+enum Color3 {Red = "myRed", Green = "myGreen", Blue = "myBlue"}     //js中不会报错,但是不推荐
+let c3: Color3 = Color3.Green;
+console.log(c3);
+
+let colorName: string = Color1[2];  //枚举类型提供的一个便利是你可以由枚举的值得到它的名字
+console.log(colorName); //=>Green
