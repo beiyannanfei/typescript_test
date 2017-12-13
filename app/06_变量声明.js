@@ -22,7 +22,7 @@ function f1() {
     }
 }
 console.log(f1()); // returns 2
-var _loop_1 = function(i) {
+var _loop_1 = function (i) {
     setTimeout(function () {
         console.log(i);
     }, 100 * i);
@@ -44,4 +44,3 @@ function keepWholeObject(wholeObject) {
 }
 keepWholeObject({ a: 10 });
 keepWholeObject({ a: 10, b: 20 });
-//# sourceMappingURL=06_变量声明.js.map
