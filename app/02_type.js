@@ -1,11 +1,11 @@
 /**
  * Created by wyq on 17/12/11.
  */
-function greeter(person) {
+function greeter02(person) {
     return "Hello, " + person;
 }
-var user = "Jane User";
-console.log(greeter(user));
-var u = 10;
+let user02 = "Jane User";
+console.log(greeter02(user02));
+let u02 = 10;
 // console.log(greeter(u));  //error 因为greeter函数接受的参数为string类型
 // console.log(greeter());   //error 

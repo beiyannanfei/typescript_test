@@ -1,6 +1,5 @@
-function greeter(person) {
+function greeter03(person) {
     return "Hello, " + person.firstName + " " + person.lastName;
 }
-var user = { firstName: "Jane", lastName: "User" };
-console.log(greeter(user));
-//# sourceMappingURL=03_interface.js.map
+let user03 = { firstName: "Jane", lastName: "User" };
+console.log(greeter03(user03));

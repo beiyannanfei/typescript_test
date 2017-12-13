@@ -22,25 +22,21 @@ function f1() {
     }
 }
 console.log(f1()); // returns 2
-var _loop_1 = function (i) {
+for (let i = 0; i < 10; i++) {
     setTimeout(function () {
         console.log(i);
     }, 100 * i);
-};
-for (var i = 0; i < 10; i++) {
-    _loop_1(i);
 }
 //解构数组
-function f2(_a) {
-    var first = _a[0], second = _a[1];
+function f2([first, second]) {
     console.log("==========", first);
     console.log("==========", second);
 }
-var input = [1, 2];
+let input = [1, 2];
 f2(input);
 function keepWholeObject(wholeObject) {
-    var a = wholeObject.a, _a = wholeObject.b, b = _a === void 0 ? 1001 : _a;
+    let { a, b = 1001 } = wholeObject;
     console.log("--------", a, b);
 }
-keepWholeObject({ a: 10 });
-keepWholeObject({ a: 10, b: 20 });
+keepWholeObject({ a: "10" });
+keepWholeObject({ a: "10", b: 20 });

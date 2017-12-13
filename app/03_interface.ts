@@ -6,10 +6,10 @@ interface Person {
     lastName: string;
 }
 
-function greeter(person: Person) {
+function greeter03(person: Person) {
     return "Hello, " + person.firstName + " " + person.lastName;
 }
 
-var user = { firstName: "Jane", lastName: "User" };
+let user03 = { firstName: "Jane", lastName: "User" };
 
-console.log(greeter(user));
+console.log(greeter03(user03));

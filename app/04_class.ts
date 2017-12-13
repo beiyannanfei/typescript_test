@@ -14,10 +14,10 @@ interface Person {
     lastName: string;
 }
 
-function greeter(person: Person) {
+function greeter04(person: Person) {
     return "Hello, " + person.firstName + " " + person.lastName;
 }
 
-var user = new Student("Jane", "M.", "User");
+let user04 = new Student("Jane", "M.", "User");
 
-console.log(greeter(user));
+console.log(greeter04(user04));
