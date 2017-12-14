@@ -5,13 +5,13 @@
  */
 
 // 接口描述了类的公共部分，而不是公共和私有两部分。 它不会帮你检查类是否具有某些私有成员
-interface ClockInterface {
+interface ClockInterface1 {
     currentTime: Date;
 
     setTime(d: Date);   //可以在接口中描述一个方法，在类里实现它
 }
 
-class Clock implements ClockInterface {
+class Clock implements ClockInterface1 {
     currentTime: Date;
 
     constructor(h: number, m: number) {
@@ -37,6 +37,49 @@ class Clock1 implements ClockConstructot {
 
     constructor(h: number, m: number); {}
 }*/
+
+// 因此，我们应该直接操作类的静态部分。
+// 看下面的例子，我们定义了两个接口， ClockConstructor为构造函数所用和ClockInterface为实例方法所用。
+// 为了方便我们定义一个构造函数 createClock，它用传入的类型创建实例。
+interface ClockConstructor {
+    new (hour: number, minute: number): ClockInterface;
+}
+
+interface ClockInterface {
+    tick();
+}
+
+function createClock(ctor: ClockConstructor, hour: number, minute: number): ClockInterface {
+    return new ctor(hour, minute);
+}
+
+class DigitalClock implements ClockInterface {
+    constructor(h: number, m: number) {
+        console.log("DigitalClock-constructor %s:%s", h, m);
+    }
+
+    tick() {
+        console.log("beep beep");
+    }
+}
+
+class AnalogClock implements ClockInterface {
+    constructor(h: number, m: number) {
+        console.log("AnalogClock-constructor %s:%s", h, m);
+    }
+
+    tick() {
+        console.log("tick tock");
+    }
+}
+
+let digital = createClock(DigitalClock, 12, 17);    //=> DigitalClock-constructor 12:17
+let analog = createClock(AnalogClock, 7, 32);       //=> AnalogClock-constructor 7:32
+digital.tick();     //=> beep beep
+analog.tick();      //=> tick tock
+
+
+
 
 
 
