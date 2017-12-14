@@ -6,3 +6,5 @@
 let myArray = ["bob", "fred"];
 let myStr = myArray[0];
 console.log("myStr: %j", myStr);
+let myArr1 = ["Alice", "Bob"];
+// myArr1[2] = "Mallory";  //error

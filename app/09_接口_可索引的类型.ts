@@ -23,5 +23,10 @@ interface NumberDictionary {
     name: number;
 }
 
+// 可以将索引签名设置为只读，这样就防止了给索引赋值
+interface ReadonlyStringArray {
+    readonly [index: number]: string;
+}
 
-
+let myArr1: ReadonlyStringArray = ["Alice", "Bob"];
+// myArr1[2] = "Mallory";  //error
