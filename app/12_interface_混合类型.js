@@ -14,3 +14,4 @@ c12.reset(); //=> reset
 console.log("init interval: %j", c12.interval); //=> init interval: 123
 c12.interval = 5.0;
 console.log("change interval: %j", c12.interval); //=> change interval: 5
+// 在使用JavaScript第三方库的时候，你可能需要像上面那样去完整地定义类型。
