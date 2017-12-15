@@ -16,3 +16,7 @@ class Greeter {
 let g20 = new Greeter("first ts class");
 console.log(g20.greeting);      //=> first ts class
 console.log(g20.greet());       //=> Hello, first ts class
+
+
+
+
